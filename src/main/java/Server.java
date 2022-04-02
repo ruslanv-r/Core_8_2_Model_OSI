@@ -17,10 +17,23 @@ public class Server {
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 
                 System.out.println("New connection accepted");
-                final String name = in.readLine();
-                out.println(String.format("Hi %s, your port is %d", name, clientSocket.getPort()));
+                final String greetings = in.readLine();
+                out.println(String.format("Hi %s, your port is %d, Write your name ", greetings, clientSocket.getPort()));
 
-                serverSocket.close();
+                final String question = in.readLine();
+                out.println(String.format("Hi %s, Are you child? (yes/no) ", question));
+
+                final String questionChild = in.readLine();
+                System.out.println(questionChild);
+
+                if(questionChild.equals("yes")){
+                    out.println(String.format("Welcome to the kids area, %s! Let's play!", question));
+                } else {
+                    out.println(String.format("Welcome to the adult zone, %s! Have a good rest, or a good working day!", question));
+                }
+
+                //serverSocket.close();
+
             }catch (IOException e){
                 e.printStackTrace();
             }

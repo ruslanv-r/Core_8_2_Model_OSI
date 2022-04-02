@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Core_8_1_Model_OSI" />
+        <module name="Core_8_2_Model_OSI" />
       </profile>
     </annotationProcessing>
   </component>
